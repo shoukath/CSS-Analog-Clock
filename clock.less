@@ -10,6 +10,9 @@
 @minute-size: @clock-size / 2 * .75;
 @second-size: @clock-size / 2 * .85;
 
+/* animations */
+@anim-length: 1s; // In seconds; max 1s
+
 .clock {
   height: @clock-size;
   width: @clock-size;
@@ -64,5 +67,14 @@
 }
 
 .clock, .hour, .minute, .second, .dash {
-    transition: all 1s ease;
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+.normal-anim {
+  transition-duration: @anim-length;
+}
+
+.invis-anim {
+  transition-duration: 0;
 }
